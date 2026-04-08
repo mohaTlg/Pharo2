@@ -28,3 +28,19 @@ DieHandle >> initialize [
 	super initialize.
 	dice := OrderedCollection new.
 ]
+
+{ #category : 'adding' }
+DieHandle >> maxValue [ 
+	| res |
+	res := 0.
+	dice do: [ :each | res := res + each faces ].
+	^ res 
+]
+
+{ #category : 'adding' }
+DieHandle >> roll [ 
+	| res |
+	res := 0.
+	dice do: [ :each | res := res + each roll ].
+	^ res 
+]

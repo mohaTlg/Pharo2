@@ -33,6 +33,14 @@ Die >> initialize [
 	faces := 6
 ]
 
+{ #category : 'initialization' }
+Die >> printOn: aStream [
+" a Die (faces number)"
+
+	super printOn: aStream .
+	aStream nextPutAll: ' (', faces printString, ')'
+]
+
 { #category : 'accessing' }
 Die >> roll [
 	^ faces atRandom 
